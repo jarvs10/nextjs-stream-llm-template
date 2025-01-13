@@ -1,7 +1,6 @@
 "use client";
 import { useChat } from "ai/react";
-import { Bot, Loader, Loader2, Send, User2 } from "lucide-react";
-import Image from "next/image";
+import { Bot, Loader2, Send, User2 } from "lucide-react";
 import Markdown from "./component/markdown";
 
 export default function Home() {
@@ -50,7 +49,7 @@ export default function Home() {
               className="p-3 h-10 w-10 stroke-stone-500 animate-spin"
             />
           ) : (
-            <Send className="p-3 h-10 w-10 stroke-stone-500" />
+            <Send className="p-3 h-10 w-10 stroke-sky-700" />
           )}
         </button>
       </form>
@@ -63,8 +62,9 @@ export default function Home() {
         {messages.map((m, index) => {
           return (
             <div
+              key={index}
               className={`p-4 shadow-md rounded-md ml-10 relative ${
-                m.role === "user" ? "bg-stone-300" : ""
+                m.role === "user" ? "bg-stone-300 text-black" : "text-white"
               }`}
             >
               <Markdown text={m.content} />
