@@ -4,10 +4,18 @@ import { Bot, Loader2, Send, User2 } from "lucide-react";
 import Markdown from "./component/markdown";
 
 export default function Home() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading, stop } =
-    useChat({
-      api: "api/llm-response",
-    });
+  
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    stop,
+  } = useChat({
+    api: "api/llm-response",
+  });
+
   return (
     <main className="flex min-h-screen flex-col items-center p-12 text-black">
       {/* form element */}
@@ -58,7 +66,10 @@ export default function Home() {
 
   function RenderMessages() {
     return (
-      <div id="chatbox" className="flex flex-col-reverse w-full text-left mt-4 gap-4 whitespace-pre-wrap">
+      <div
+        id="chatbox"
+        className="flex flex-col-reverse w-full text-left mt-4 gap-4 whitespace-pre-wrap"
+      >
         {messages.map((m, index) => {
           return (
             <div

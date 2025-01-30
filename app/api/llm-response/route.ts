@@ -6,14 +6,14 @@ export async function POST(req: Request, res: Response) {
   const prompt = messages.data.prompt;
 
   const openai =createOpenAI({
-    apiKey: process.env.TOGETHER_API_KEY,
-    // baseURL: 'https://api.groq.com/openai/v1',
-    baseURL: 'https://api.together.xyz/v1/',
+    apiKey: process.env.GROQ_API_KEY,
+    baseURL: 'https://api.groq.com/openai/v1',
+    // baseURL: 'https://api.together.xyz/v1/',
   });
 
   const result = await streamText({
-    // model: openai('llama-3.3-70b-versatile'),
-    model: openai('meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo'),
+    model: openai('llama-3.3-70b-versatile'),
+    // model: openai('meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo'),
     prompt,
   });
 
