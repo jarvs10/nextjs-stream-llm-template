@@ -12,8 +12,9 @@ export async function POST(req: Request, res: Response) {
   });
 
   const result = await streamText({
-    model: openai('llama-3.3-70b-versatile'),
+    // model: openai('llama-3.3-70b-versatile'),
     // model: openai('meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo'),
+    model: openai("deepseek-r1-distill-llama-70b"),
     prompt,
   });
 
